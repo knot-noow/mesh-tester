@@ -38,7 +38,7 @@ TOKEN=gateway PORT=8081 MONGODB_URI=localhost:27017/gateway MESSAGE_BUS_PORT=777
 To send messages between devices, first register a new device using your HTTP simulation tool and use the UUID and Token in the following command
 
 ```sh
-UUID=%UUID% TOKEN=%TOKEN% TARGET_UUID=%TARGET_UUID% HOST=localhost PORT=8080 node knot-cloud-logger/listener.js
+UUID=%UUID% TOKEN=%TOKEN% TARGET_UUID=%TARGET_UUID% HOST=localhost PORT=8080 node mesh-tester/listener.js
 ```
 
 note that we now have a `TARGET_UUID` variable. That variable should receive the UUID of the device that will send us a message. If you don't have it, just register a new one.
@@ -46,5 +46,5 @@ note that we now have a `TARGET_UUID` variable. That variable should receive the
 Now, using the UUID and Token of the newly registered device, execute the following command using the UUID of the listener device as %TARGET_UUID%.
 
 ```sh
-UUID=%UUID% TOKEN=%TOKEN% TARGET_UUID=%TARGET_UUID% HOST=localhost PORT=8080 node knot-cloud-logger/device.js
+UUID=%UUID% TOKEN=%TOKEN% TARGET_UUID=%TARGET_UUID% HOST=localhost PORT=8080 node mesh-tester/device.js
 ```
